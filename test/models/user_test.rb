@@ -42,6 +42,10 @@ class UserTest < ActiveSupport::TestCase
     assert_not duplicate_user.valid?
   end
 
+  test 'email addresses should be stored in lower case' do
+    skip
+  end
+
   test 'password should be present (nonblank)' do
     @user.password = @user.password_confirmation = ' ' * 6
     assert_not @user.valid?
