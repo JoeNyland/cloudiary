@@ -1,0 +1,9 @@
+joe:
+  name: Joe Nyland
+  email: contact@joenyland.me
+
+<% 29.times do |n| %>
+user_<%= n %>:
+  name:  <%= "User #{n}" %>
+  email: <%= "user-#{n}@example.com" %>
+<% end %>
