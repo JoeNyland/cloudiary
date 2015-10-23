@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   get    'signup'  => 'users#new'
+  get    'account' => 'users#show'
   resources :users
 
 end
