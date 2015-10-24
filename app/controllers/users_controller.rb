@@ -12,9 +12,23 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       flash[:info] = 'Successfully signed you up!'
-      redirect_to root_url
+      redirect_to @user
     else
       render :new
+    end
+  end
+
+  def edit
+    @user = User.find(params[:id])
+  end
+
+  def update
+    @user = User.find(params[:id])
+    if @user.update_attributes(user_params)
+      flash[:success] = 'Profile updated'
+      redirect_to @user
+    else
+      render 'edit'
     end
   end
 
