@@ -1,9 +1,11 @@
 joe:
   name: Joe Nyland
   email: contact@joenyland.me
+  password_digest: <%= User.digest('password') %>
 
 <% 29.times do |n| %>
 user_<%= n %>:
   name:  <%= "User #{n}" %>
   email: <%= "user-#{n}@example.com" %>
+  password_digest: <%= User.digest('password') %>
 <% end %>
