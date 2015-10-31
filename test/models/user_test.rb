@@ -43,7 +43,11 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test 'email addresses should be stored in lower case' do
-    skip
+    test_email = 'TEst@EXAMple.cOm'
+    @user.email = test_email
+    @user.save
+    assert_not_equal @user.email, test_email
+    assert_equal @user.email, test_email.downcase!
   end
 
   test 'password should be present (nonblank)' do
