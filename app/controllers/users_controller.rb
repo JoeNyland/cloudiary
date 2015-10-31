@@ -6,6 +6,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by_id(params[:id])
+    redirect_to root_url unless current_user == @user
   end
 
   def create
