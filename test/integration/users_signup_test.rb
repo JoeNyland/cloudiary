@@ -14,7 +14,16 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
   end
 
   test 'invalid signup information shows error message' do
-    skip
+    get signup_path
+    assert_no_difference 'User.count' do
+      post users_path, user: { name:  '',
+                               email: 'user@invalid',
+                               password:              'foo',
+                               password_confirmation: 'bar' }
+    end
+    assert_template 'users/new'
+    assert_not flash.empty?
+    assert_select '.alert-error'
   end
 
   test 'valid signup information' do

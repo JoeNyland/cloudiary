@@ -17,6 +17,7 @@ class UsersController < ApplicationController
       flash[:info] = 'Successfully signed you up!'
       redirect_to @user
     else
+      flash[:error] = 'There was a problem with the information that you submitted'
       render :new
     end
   end
