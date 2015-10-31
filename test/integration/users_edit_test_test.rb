@@ -25,8 +25,8 @@ class UsersEditTestTest < ActionDispatch::IntegrationTest
     email = 'foo@bar.com'
     patch user_path(@user), user: { name:  name,
                                     email: email,
-                                    password:              '',
-                                    password_confirmation: '' }
+                                    password:              'password',
+                                    password_confirmation: 'password' }
     assert_not flash.empty?
     assert_redirected_to @user
     @user.reload
@@ -42,8 +42,8 @@ class UsersEditTestTest < ActionDispatch::IntegrationTest
     email = 'foo@bar.com'
     patch user_path(@user), user: { name:  name,
                                     email: email,
-                                    password:              '',
-                                    password_confirmation: '' }
+                                    password:              'password',
+                                    password_confirmation: 'password' }
     assert_not flash.empty?
     assert_redirected_to @user
     @user.reload
