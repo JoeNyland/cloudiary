@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   validates :password, presence: true, length: { minimum: 6 }
   before_save { email.downcase! }
   has_secure_password
+  has_many :diaries
 
   # Returns the hash digest of the given string.
   # Useful to generate the digest for a a user's password in fixtures, for example.
