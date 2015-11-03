@@ -1,9 +1,5 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  body: MyText
-  owner_id: 
-
-two:
-  body: MyText
-  owner_id: 
+<% 30.times do |n| %>
+diary_<%= n %>:
+  title:  <%= "Diary #{n}" %>
+  user_id: <%= n %>
+<% end %>
