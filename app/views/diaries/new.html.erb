@@ -1,0 +1,8 @@
+<h1>Create a new diary</h1>
+
+<%= form_for [@current_user, @diary] do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+
+    <%= f.submit 'Create diary' %>
+<% end %>
