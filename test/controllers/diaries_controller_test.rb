@@ -34,4 +34,16 @@ class DiariesControllerTest < ActionController::TestCase
     # assert flash.empty?
     # assert_redirected_to root_url
   end
+
+  test 'should not redirect get index when logged in' do
+    log_in_as @user
+    get :index, user_id: @user
+    assert_template 'diaries/index'
+  end
+
+  test 'should not redirect get new when logged in' do
+    log_in_as @user
+    get :new, user_id: @user
+    assert_template 'diaries/new'
+  end
 end
