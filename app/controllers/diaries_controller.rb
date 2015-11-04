@@ -10,6 +10,10 @@ class DiariesController < ApplicationController
     @diaries = @current_user.diaries.all
   end
 
+  def show
+    @diary = Diary.find_by_id(params[:id])
+  end
+
   def create
     @user = User.find_by_id(params[:user_id])
     @diary = @user.diaries.new(diary_params)
