@@ -1,0 +1,7 @@
+<h1>Your Diaries</h1>
+
+<ul>
+    <% @diaries.each do |d| %>
+        <li><%= link_to d.title, user_diary_url(d.user_id, d.id) %></li>
+    <% end %>
+</ul>
