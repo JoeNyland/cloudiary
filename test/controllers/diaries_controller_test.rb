@@ -9,37 +9,37 @@ class DiariesControllerTest < ActionController::TestCase
 
   test 'should redirect get index when not logged in' do
     get :index, user_id: @user
-    assert_redirected_to login_url
+    assert_redirected_to login_path
   end
 
   test 'should redirect get new when not logged in' do
     get :new, user_id: @user
-    assert_redirected_to login_url
+    assert_redirected_to login_path
   end
 
   test 'should redirect get show when not logged in' do
     get :show, id: @diary, user_id: @user
-    assert_redirected_to login_url
+    assert_redirected_to login_path
     assert_not flash.empty?
   end
 
   test 'should redirect edit when not logged in' do
-    # get :edit, user_id: @user
-    # assert_not flash.empty?
-    # assert_redirected_to login_url
+    get :edit, id: @diary, user_id: @user
+    assert_not flash.empty?
+    assert_redirected_to login_path
   end
 
   test 'should redirect update when not logged in' do
-    # patch :update, id: @user, user: { name: @user.name, email: @user.email }
-    # assert_not flash.empty?
-    # assert_redirected_to login_url
+    patch :update, id: @diary, user_id: @user, diary: { title: @diary.title }
+    assert_not flash.empty?
+    assert_redirected_to login_path
   end
 
   test 'should redirect edit when logged in as wrong user' do
-    # log_in_as(@other_user)
-    # get :edit, id: @user
-    # assert flash.empty?
-    # assert_redirected_to root_url
+    log_in_as(@other_user)
+    get :edit, id: @diary, user_id: @user
+    assert flash.empty?
+    assert_redirected_to root_path
   end
 
   test 'should not redirect get index when logged in' do

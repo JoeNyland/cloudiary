@@ -1,16 +1,20 @@
 class DiariesController < ApplicationController
 
   before_action :logged_in_user
+  before_action :correct_user
 
   def new
-    @diary = @current_user.diaries.new
+    @user = User.find_by_id(params[:user_id])
+    @diary = @user.diaries.new
   end
 
   def index
-    @diaries = @current_user.diaries.all
+    @user = User.find_by_id(params[:user_id])
+    @diaries = @user.diaries.all
   end
 
   def show
+    @user = User.find_by_id(params[:user_id])
     @diary = Diary.find_by_id(params[:id])
   end
 
@@ -26,10 +30,35 @@ class DiariesController < ApplicationController
     end
   end
 
+  def edit
+    @user = User.find_by_id(params[:user_id])
+    @diary = Diary.find_by_id(params[:id])
+  end
+
+  def update
+    @user = User.find_by_id(params[:user_id])
+    @diary = Diary.find_by_id(params[:id])
+    if @diary.update(diary_params)
+      flash[:success] = 'Diary updated'
+      redirect_to [@user, @diary]
+    else
+      flash[:error] = 'An error occurred whilst saving your changes'
+      render 'edit'
+    end
+  end
+
   private
 
   def diary_params
     params.require(:diary).permit(:title)
+  end
+
+  # Before filters
+
+  # Confirms the correct user.
+  def correct_user
+    @user = User.find(params[:user_id])
+    redirect_to(root_url) unless current_user?(@user)
   end
 
 end
