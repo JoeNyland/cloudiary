@@ -62,4 +62,25 @@ class DiariesControllerTest < ActionController::TestCase
     assert_template 'diaries/show'
     assert flash.empty?
   end
+
+  test 'should redirect delete when not logged in' do
+    delete :destroy, id: @diary, user_id: @user
+    assert_not flash.empty?
+    assert_redirected_to login_path
+  end
+
+  test 'should redirect delete when logged in as wrong user' do
+    log_in_as(@other_user)
+    delete :destroy, id: @diary, user_id: @user
+    assert flash.empty?
+    assert_redirected_to root_path
+  end
+
+  test 'should allow delete when logged in as correct user' do
+    log_in_as(@user)
+    delete :destroy, id: @diary, user_id: @user
+    assert_not flash.empty?
+    assert_redirected_to user_diaries_path
+  end
+
 end
