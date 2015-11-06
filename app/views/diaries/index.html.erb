@@ -1,7 +1,13 @@
 <h1>Your Diaries</h1>
 
+<% if @diaries.any? %>
 <ul>
     <% @diaries.each do |d| %>
         <li><%= link_to d.title, user_diary_url(d.user_id, d.id) %></li>
     <% end %>
 </ul>
+<% else %>
+<p>You don't have any diaries</p>
+<% end %>
+
+<%= link_to 'Create a diary', new_user_diary_path %>
