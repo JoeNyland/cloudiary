@@ -5,3 +5,5 @@
   <li>Name: <%= @user.name %></li>
   <li>Email: <%= @user.email %></li>
 </ul>
+
+<%= link_to 'View your diaries', user_diaries_path([@user]) %>
