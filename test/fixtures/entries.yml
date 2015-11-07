@@ -1,11 +1,11 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+entry_one:
+  title:  Entry1
+  diary_id: 1
+  body: <%= Faker::Lorem.sentence(5) %>
 
-one:
-  diary_id: 
-  title: MyString
-  body: MyText
-
-two:
-  diary_id: 
-  title: MyString
-  body: MyText
+<% 30.times do |n| %>
+diary_<%= n %>:
+  title:  <%= "Entry#{n}" %>
+  diary_id: <%= n %>
+  body: <%= Faker::Lorem.sentence(5) %>
+<% end %>
