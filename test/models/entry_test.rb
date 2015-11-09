@@ -13,28 +13,28 @@ class EntryTest < ActiveSupport::TestCase
 
   test 'should be valid' do
     @entry.title = 'A test diary entry'
-    @entry.body = Faker::Lorem.sentence(5)
+    @entry.body = Faker::Lorem.sentences(5)
     assert @entry.valid?
   end
 
   test 'title must be present' do
     @entry.title = '   '
+    @entry.body = Faker::Lorem.sentences(5)
     assert_not @entry.valid?
   end
 
   test 'title must not be too long' do
     @entry.title = 'a' * 50
+    @entry.body = Faker::Lorem.sentences(5)
     assert_not @entry.valid?
   end
 
   test 'body must be present' do
+    @entry.title = 'a' * 30
     @entry.body = '   '
     assert_not @entry.valid?
-  end
-
-  test 'body must not be too long' do
-    @entry.body = 'a' * 50
-    assert_not @entry.valid?
+    @entry.body = Faker::Lorem.sentences(5)
+    assert @entry.valid?
   end
 
 end
