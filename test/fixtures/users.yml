@@ -1,4 +1,5 @@
 joe:
+  id: 1
   name: Joe Nyland
   email: contact@joenyland.me
   password_digest: <%= User.digest('password') %>
