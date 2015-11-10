@@ -28,6 +28,25 @@ class EntriesController < ApplicationController
     @entry = @diary.entries.find_by_id(params[:id])
   end
 
+  def edit
+    @user = User.find_by_id(params[:user_id])
+    @diary = @user.diaries.find_by_id(params[:diary_id])
+    @entry = @diary.entries.find_by_id(params[:id])
+  end
+
+  def update
+    @user = User.find_by_id(params[:user_id])
+    @diary = @user.diaries.find_by_id(params[:diary_id])
+    @entry = @diary.entries.find_by_id(params[:id])
+    if @entry.update(entry_params)
+      flash[:success] = 'Entry updated'
+      redirect_to [@user, @diary, @entry]
+    else
+      flash[:error] = 'An error occurred whilst saving your changes'
+      render 'edit'
+    end
+  end
+
   private
 
   def entry_params

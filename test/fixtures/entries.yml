@@ -1,5 +1,6 @@
 entry_one:
   title:  Entry1
+  id: 1
   diary_id: 1
   body: <%= Faker::Lorem.sentence(5) %>
 

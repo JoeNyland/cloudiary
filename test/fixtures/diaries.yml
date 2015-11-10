@@ -1,6 +1,7 @@
 one:
   title:  "Diary one"
   user_id: 1
+  id: 1
 
 <% 30.times do |n| %>
 diary_<%= n %>:
