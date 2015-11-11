@@ -11,6 +11,6 @@
     <p>You haven't created any diary entries yet. Why not make a start?<%= link_to %></p>
 <% end %>
 
-<%= link_to 'Delete this diary', user_diary_path, method: :delete %>
+<%= link_to 'Delete this diary', user_diary_path, method: :delete, data: {confirm: 'Are you sure?'} %>
 <%= link_to 'Edit this diary', edit_user_diary_path %>
 <%= link_to 'Back to your diaries', user_diaries_path %>
