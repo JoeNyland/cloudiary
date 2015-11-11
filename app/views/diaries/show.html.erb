@@ -1,11 +1,15 @@
 <h1><%= @diary.title %></h1>
 
 <h4>Entries in this diary</h4>
-<ol>
-  <li>Example entry 1</li>
-  <li>Example entry 2</li>
-  <li>Example entry 3</li>
-</ol>
+<% if @diary.entries.any? %>
+    <ol>
+    <% @diary.entries.each do |e| %>
+          <li><%= link_to e.title, user_diary_entry_path(diary_id: @diary, id: e, user_id: @user) %></li>
+    <% end %>
+    </ol>
+<% else %>
+    <p>You haven't created any diary entries yet. Why not make a start?<%= link_to %></p>
+<% end %>
 
 <%= link_to 'Delete this diary', user_diary_path, method: :delete %>
 <%= link_to 'Edit this diary', edit_user_diary_path %>
