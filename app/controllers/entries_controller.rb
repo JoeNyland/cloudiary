@@ -47,6 +47,12 @@ class EntriesController < ApplicationController
     end
   end
 
+  def destroy
+    Entry.find_by_id(params[:id]).destroy
+    flash[:success] = 'Entry deleted'
+    redirect_to user_diaries_path
+  end
+
   private
 
   def entry_params
