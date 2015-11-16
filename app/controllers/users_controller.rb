@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find_by_id(params[:id])
+    @user = User.find_by_id(params[:id]) || @current_user
   end
 
   def create
@@ -48,7 +48,7 @@ class UsersController < ApplicationController
 
   # Confirms the correct user.
   def correct_user
-    @user = User.find(params[:id])
+    @user = User.find_by_id(params[:id]) || @current_user
     redirect_to(root_url) unless current_user?(@user)
   end
 
