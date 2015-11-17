@@ -23,7 +23,7 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
     end
     assert_template 'users/new'
     assert_not flash.empty?
-    assert_select '.alert-error'
+    assert_select '.alert-danger'
   end
 
   test 'valid signup information' do
