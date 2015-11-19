@@ -1,7 +1,9 @@
+<% provide(:title, 'View a diary entry') %>
+
 <h1><%= @entry.title %></h1>
 
 <p><%= @entry.body %></p>
 
 <%= link_to 'Edit this entry', edit_user_diary_entry_path %>
-<%= link_to 'Delete this diary', user_diary_entry_path, method: :delete, data: {confirm: 'Are you sure?'} %>
+<%= link_to 'Delete this entry', user_diary_entry_path, method: :delete, data: {confirm: 'Are you sure?'} %>
 <%= link_to 'Back to your diary', user_diary_path(@diary,@user) %>

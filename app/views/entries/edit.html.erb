@@ -1,3 +1,5 @@
+<% provide(:title, 'Edit a diary entry') %>
+
 <%= form_for [@user,@diary,@entry] do |f| %>
     <%= f.label :title %>
     <%= f.text_field :title %>
