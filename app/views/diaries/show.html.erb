@@ -1,19 +1,30 @@
 <% provide(:title, 'View your diary') %>
 
-<h1><%= @diary.title %></h1>
+<div class="page-header">
+  <h1><%= @diary.title %></h1>
+</div>
 
-<h4>Entries in this diary</h4>
-<% if @diary.entries.any? %>
-    <ol>
-    <% @diary.entries.each do |e| %>
-          <li><%= link_to e.title, user_diary_entry_path(diary_id: @diary, id: e, user_id: @user) %></li>
+<div class="row">
+  <div class="col-md-6">
+    <h4>Entries in this diary</h4>
+    <% if @diary.entries.any? %>
+        <div class="list-group">
+          <% @diary.entries.each do |e| %>
+            <%= link_to user_diary_entry_path(diary_id: @diary, id: e, user_id: @user), class: 'list-group-item' do %>
+              <h4 class="list-group-item-heading"><%= e.title %></h4>
+                  <h6 class="list-group-item-heading"><%= e.created_at.strftime('%d/%m/%Y %r') %></h6>
+              <p class="list-group-item-text"><%= e.body.truncate(100, separator: /\s/) %></p>
+            <% end %>
+          <% end %>
+        </div>
+    <% else %>
+        <p>You haven't created any diary entries yet. Why not
+          <%= link_to 'make a start', new_user_diary_entry_path(user_id:@user,diary_id:@diary) %>?</p>
     <% end %>
-    </ol>
-<% else %>
-    <p>You haven't created any diary entries yet. Why not
-      <%= link_to 'make a start', new_user_diary_entry_path(user_id:@user,diary_id:@diary) %>?</p>
-<% end %>
 
-<%= link_to 'Delete this diary', user_diary_path, method: :delete, data: {confirm: 'Are you sure?'} %>
-<%= link_to 'Edit this diary', edit_user_diary_path %>
-<%= link_to 'Back to your diaries', user_diaries_path %>
+    <%= link_to 'Back to your diaries', user_diaries_path, class: 'btn btn-default' %>
+    <%= link_to 'Delete this diary', user_diary_path, method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-danger' %>
+    <%= link_to 'Edit this diary', edit_user_diary_path, class: 'btn btn-default' %>
+    <%= link_to 'Create a new entry', new_user_diary_entry_path(user_id:@user,diary_id:@diary), class: 'btn btn-primary' %>
+  </div>
+</div>
