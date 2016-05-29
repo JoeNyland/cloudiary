@@ -38,7 +38,7 @@ class DiariesController < ApplicationController
   def update
     @user = User.find_by_id(params[:user_id])
     @diary = Diary.find_by_id(params[:id])
-    if @diary.update(diary_params)
+    if @diary.update_attributes(diary_params)
       flash[:success] = 'Diary updated'
       redirect_to [@user, @diary]
     else
