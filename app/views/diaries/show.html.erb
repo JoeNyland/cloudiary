@@ -12,7 +12,7 @@
           <% @diary.entries.each do |e| %>
             <%= link_to user_diary_entry_path(diary_id: @diary, id: e, user_id: @user), class: 'list-group-item' do %>
               <h4 class="list-group-item-heading"><%= e.title %></h4>
-                  <h6 class="list-group-item-heading"><%= e.created_at.strftime('%d/%m/%Y %r') %></h6>
+                  <h6 class="list-group-item-heading"><%= l e.created_at.to_date %></h6>
               <p class="list-group-item-text"><%= e.body.truncate(100, separator: /\s/) %></p>
             <% end %>
           <% end %>

@@ -1,7 +1,7 @@
 <% provide(:title, 'View a diary entry') %>
 
 <div class="page-header">
-  <h1><%= @entry.created_at.to_date.strftime '%d/%m/%Y' %></h1>
+  <h1><%= l @entry.created_at.to_date %></h1>
 </div>
 
 <div class="row">
