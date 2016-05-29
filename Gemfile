@@ -42,6 +42,7 @@ end
 
 group :test do
   gem 'faker'
+  gem 'mini_backtrace'
 end
 
 group :development do
