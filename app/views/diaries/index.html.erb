@@ -5,8 +5,8 @@
 </div>
 
 <div class="row">
-<% if @diaries.any? %>
   <div class="col-md-4">
+    <% if @diaries.any? %>
     <div class="list-group">
       <% @diaries.each do |d| %>
           <%= link_to user_diary_url(d.user_id, d.id), class:'list-group-item' do %>
@@ -17,10 +17,11 @@
           <% end %>
       <% end %>
     </div>
+    <% else %>
+    <p>You don't have any diaries. Why not
+      <%= link_to 'make a start', new_user_diary_path(@user) %>?</p>
+    <% end %>
   </div>
-<% else %>
-  <p>You don't have any diaries</p>
-<% end %>
 </div>
 
 <div class="row">
