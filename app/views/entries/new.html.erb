@@ -11,9 +11,9 @@
       <%= f.label :entry %>
       <%= f.text_area :body, class: 'form-control', rows: 10 %>
     </div>
-    <div class="btn-group-vertical">
-      <%= f.submit 'Create diary entry', class: 'btn btn-primary' %>
+    <div class="btn-group">
       <%= link_to 'Cancel', user_diary_path(@current_user, @diary), class: 'btn btn-default' %>
+      <%= f.submit 'Create diary entry', class: 'btn btn-primary' %>
     </div>
   <% end %>
 </div>
