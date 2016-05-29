@@ -9,7 +9,12 @@
   <div class="col-md-4">
     <div class="list-group">
       <% @diaries.each do |d| %>
-          <%= link_to d.title, user_diary_url(d.user_id, d.id), class:'list-group-item' %>
+          <%= link_to user_diary_url(d.user_id, d.id), class:'list-group-item' do %>
+          <%= d.title %>
+          <% if d.entries.any? %>
+            <span class="badge"><%= d.entries.count %></span>
+          <% end %>
+          <% end %>
       <% end %>
     </div>
   </div>
