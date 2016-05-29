@@ -48,9 +48,11 @@ class EntriesController < ApplicationController
   end
 
   def destroy
-    Entry.find_by_id(params[:id]).destroy
+    @diary = Diary.find(params[:diary_id])
+    @entry = Entry.find(params[:id])
+    @entry.destroy
     flash[:success] = 'Entry deleted'
-    redirect_to user_diaries_path
+    redirect_to user_diary_path id: @diary
   end
 
   private
