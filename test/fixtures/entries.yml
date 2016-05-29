@@ -1,12 +1,10 @@
 entry_one:
-  title:  Entry1
   id: 1
   diary_id: 1
   body: <%= Faker::Lorem.sentence(5) %>
 
 <% 30.times do |n| %>
 diary_<%= n %>:
-  title:  <%= "Entry#{n}" %>
   diary_id: <%= n %>
   body: <%= Faker::Lorem.sentence(5) %>
 <% end %>

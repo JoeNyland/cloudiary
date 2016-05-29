@@ -58,7 +58,7 @@ class EntriesControllerTest < ActionController::TestCase
 
   test 'should allow update when logged in as correct user' do
     log_in_as(@user)
-    patch :update, id: @entry, user_id: @user, diary_id: @diary, entry: { title: 'test', body: 'test'*5 }
+    patch :update, id: @entry, user_id: @user, diary_id: @diary, entry: { body: 'test'*5 }
     assert_not flash.empty?
     assert_redirected_to user_diary_entry_path
   end
