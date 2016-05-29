@@ -1,9 +1,21 @@
 <% provide(:title, 'View a diary entry') %>
 
-<h1><%= @entry.title %></h1>
+<div class="page-header">
+  <h1><%= @entry.created_at.to_date.strftime '%d/%m/%Y' %></h1>
+</div>
 
-<p><%= @entry.body %></p>
+<div class="row">
+  <div class="col-md-6">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <p><%= @entry.body %></p>
+      </div>
+    </div>
+  </div>
+</div>
 
-<%= link_to 'Edit this entry', edit_user_diary_entry_path %>
-<%= link_to 'Delete this entry', user_diary_entry_path, method: :delete, data: {confirm: 'Are you sure?'} %>
-<%= link_to 'Back to your diary', user_diary_path(@user,@diary) %>
+<div class="btn-group">
+  <%= link_to 'Back to your diary', user_diary_path(@user,@diary), class: 'btn btn-default' %>
+  <%= link_to 'Delete this entry', user_diary_entry_path, method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-danger' %>
+  <%= link_to 'Edit this entry', edit_user_diary_entry_path, class: 'btn btn-default' %>
+</div>
