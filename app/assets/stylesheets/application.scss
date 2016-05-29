@@ -18,7 +18,10 @@
 @import "bootstrap";
 
 body {
-  nav .navbar-brand img {width: 20px; height: 20px; display: inline;}
+  nav {
+    &.navbar-default {background-color: inherit; border-color: #fff;}
+    .navbar-brand img {width: 20px; height: 20px; display: inline;}
+  }
   font-family: 'Source Sans Pro', sans-serif;
   padding-top: 70px;
   .page-header {
