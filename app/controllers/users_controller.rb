@@ -15,7 +15,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       log_in @user
-      flash[:info] = 'Successfully signed you up!'
+      flash[:success] = "Successfully signed you up! We've logged you in so you can get started!"
       redirect_to @user
     else
       flash[:danger] = 'There was a problem with the information that you submitted.'
