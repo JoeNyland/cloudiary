@@ -35,7 +35,7 @@ class EntriesCreateTest < ActionDispatch::IntegrationTest
     end
     assert_template 'entries/show'
     assert_not flash.empty?
-    assert_select '.alert-info'
+    assert_select '.alert-success'
   end
 
 end
