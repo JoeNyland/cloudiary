@@ -22,7 +22,7 @@ class DiariesController < ApplicationController
     @user = User.find(params[:user_id])
     @diary = @user.diaries.new(diary_params)
     if @diary.save
-      flash[:info] = 'Successfully created a diary'
+      flash[:success] = 'Successfully created your diary'
       redirect_to [@user,@diary]
     else
       flash[:error] = 'There was a problem with the information that you submitted'

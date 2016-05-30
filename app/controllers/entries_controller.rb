@@ -14,7 +14,7 @@ class EntriesController < ApplicationController
     @diary = @user.diaries.find(params[:diary_id])
     @entry = @diary.entries.new(entry_params)
     if @entry.save
-      flash[:info] = 'Successfully created a diary entry'
+      flash[:success] = "Ok, that's been saved!"
       redirect_to [@user,@diary,@entry]
     else
       flash[:error] = 'There was a problem with the information that you submitted'
