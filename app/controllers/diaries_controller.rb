@@ -50,9 +50,13 @@ class DiariesController < ApplicationController
   def destroy
     @user = User.find(params[:user_id])
     @diary = @user.diaries.find(params[:id])
-    @diary.destroy
-    flash[:success] = 'Diary deleted'
-    redirect_to user_diaries_path
+    if @diary.destroy
+      flash[:success] = 'Diary deleted'
+      redirect_to user_diaries_path
+    else
+      flash[:danger] = 'An error occurred whilst deleting your diary'
+      redirect_to user_diary_path @user,@diary
+    end
   end
 
   private
