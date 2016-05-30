@@ -16,4 +16,10 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  # Confirms the correct user.
+  def correct_user
+    @user = User.find_by_id(params[:id]) || User.find_by_id(params[:user_id]) || @current_user
+    redirect_to(root_url) unless current_user?(@user)
+  end
+
 end
