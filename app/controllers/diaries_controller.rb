@@ -23,7 +23,7 @@ class DiariesController < ApplicationController
     @diary = @user.diaries.new(diary_params)
     if @diary.save
       flash[:success] = 'Successfully created your diary'
-      redirect_to [@user,@diary]
+      redirect_to user_diary_path @user,@diary
     else
       flash[:error] = 'There was a problem with the information that you submitted'
       render :new
@@ -40,7 +40,7 @@ class DiariesController < ApplicationController
     @diary = Diary.find(params[:id])
     if @diary.update_attributes(diary_params)
       flash[:success] = 'Diary updated'
-      redirect_to [@user, @diary]
+      redirect_to user_diary_path @user,@diary
     else
       flash[:error] = 'An error occurred whilst saving your changes'
       render 'edit'
