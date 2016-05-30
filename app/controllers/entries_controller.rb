@@ -15,7 +15,7 @@ class EntriesController < ApplicationController
     @entry = @diary.entries.new(entry_params)
     if @entry.save
       flash[:success] = "Ok, that's been saved!"
-      redirect_to [@user,@diary,@entry]
+      redirect_to user_diary_entry_path @user, @diary, @entry
     else
       flash[:error] = 'There was a problem with the information that you submitted'
       render :new
@@ -40,7 +40,7 @@ class EntriesController < ApplicationController
     @entry = @diary.entries.find(params[:id])
     if @entry.update(entry_params)
       flash[:success] = 'Entry updated'
-      redirect_to [@user, @diary, @entry]
+      redirect_to user_diary_entry_path @user, @diary, @entry
     else
       flash[:error] = 'An error occurred whilst saving your changes'
       render 'edit'
