@@ -15,7 +15,7 @@ class DiariesController < ApplicationController
 
   def show
     @user = User.find(params[:user_id])
-    @diary = Diary.find(params[:id])
+    @diary = @user.diaries.find(params[:id])
   end
 
   def create
@@ -32,12 +32,12 @@ class DiariesController < ApplicationController
 
   def edit
     @user = User.find(params[:user_id])
-    @diary = Diary.find(params[:id])
+    @diary = @user.diaries.find(params[:id])
   end
 
   def update
     @user = User.find(params[:user_id])
-    @diary = Diary.find(params[:id])
+    @diary = @user.diaries.find(params[:id])
     if @diary.update_attributes(diary_params)
       flash[:success] = 'Diary updated'
       redirect_to user_diary_path @user,@diary
@@ -48,7 +48,9 @@ class DiariesController < ApplicationController
   end
 
   def destroy
-    Diary.find(params[:id]).destroy
+    @user = User.find(params[:user_id])
+    @diary = @user.diaries.find(params[:id])
+    @diary.destroy
     flash[:success] = 'Diary deleted'
     redirect_to user_diaries_path
   end
