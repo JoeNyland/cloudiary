@@ -21,9 +21,11 @@
           <%= link_to 'make a start', new_user_diary_entry_path(user_id:@user,diary_id:@diary) %>?</p>
     <% end %>
 
+    <div class="btn-group">
     <%= link_to 'Back to your diaries', user_diaries_path, class: 'btn btn-default' %>
     <%= link_to 'Delete this diary', user_diary_path, method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-danger' %>
     <%= link_to 'Edit this diary', edit_user_diary_path, class: 'btn btn-default' %>
     <%= link_to 'Create a new entry', new_user_diary_entry_path(user_id:@user,diary_id:@diary), class: 'btn btn-primary' %>
+    </div>
   </div>
 </div>
