@@ -22,12 +22,12 @@ gulp.task('watch', function() {
 
 // Concatenate all SCSS files in scss, generate sourcemaps, minify it and output to assets/css/nudge.min.css
 gulp.task('build-css', function() {
-  return gulp.src('scss/**/*.scss')
+  return gulp.src(['scss/**/*.scss','scss/**/*.css'])
     .pipe(sassLint({configFile: '.sass_lint.yml'}))
     .pipe(sassLint.format())
     .pipe(sassLint.failOnError())
     .pipe(sourcemaps.init())
-    .pipe(concat('main.min.css'))
+    .pipe(concat('cloudiary.min.css'))
     // Only compress for production
     .pipe(gutil.env.type === 'production' ? sass({outputStyle: 'compressed'}).on('error', sass.logError) : sass({outputStyle: 'expanded'}).on('error', sass.logError))
     .pipe(autoprefixer({
@@ -43,7 +43,7 @@ gulp.task('build-js', function() {
     .pipe(jshint())
     .pipe(jshint.reporter('jshint-stylish'))
     .pipe(sourcemaps.init())
-    .pipe(concat('main.min.js'))
+    .pipe(concat('cloudiary.min.js'))
     .pipe(gutil.env.type === 'production' ? uglify() : gutil.noop()) // Only uglify if gulp is ran with '--type production'
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('assets/js'));
