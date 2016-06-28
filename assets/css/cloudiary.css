@@ -1,0 +1,85 @@
+.blue { color: #00b3fe; }
+.green  { color: #18bc9c;}
+.white { color: #fefefe;}
+.logo-tablet-dark-big {
+    border-radius: 3px;
+    background-color: #384452;
+    padding: 20px 10px;
+}
+.logo-tablet-dark-inline {
+    border-radius: 3px;
+    background-color: #384452;
+    padding: 0 3px;
+    display: inline;
+}
+.logo-tablet-light-inline {
+    border-radius: 3px;
+    background-color: #fefefe;
+    color: #384452;
+    padding: 0 3px;
+    display: inline;
+}
+
+a:hover .blue {
+    color: #5e5e5e;
+}
+
+a .blue {
+    -webkit-transition: background-color .4s linear, color .4s linear;
+    -moz-transition: background-color .4s linear, color .4s linear;
+    -o-transition: background-color .4s linear, color .4s linear;
+    -ms-transition: background-color .4s linear, color .4s linear;
+    transition: background-color .4s linear, color .4s linear;
+}
+
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.navbar .btn {margin:5px 10px;}
+@media screen and (min-width: 768px) {
+    .navbar .btn {margin:0 5px;}
+}
+
+.portfolio-item {
+    padding: 25px;
+    margin: auto;
+}
+
+.portfolio-item:nth-of-type(2n) {
+    background-color: #00b3fe;
+}
+
+.portfolio-item:nth-of-type(2n-1),
+.portfolio-item:nth-of-type(2n-1) .bg {
+    background-color: #384452;
+}
+
+.portfolio {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.portfolio-item {
+    max-width: 300px;
+    margin: 5px;
+}
+
+#help {
+    text-align: center;
+}
+
+.blue-container {
+    color: #fefefe;
+    background-color: #00b3fe;
+    padding: 100px 0;
+}
+
+.blue-container p {
+    color: #fefefe;
+}
+
+.author-footer { position: fixed; right: 0; bottom: 0; background-color: #fefefe; border-top-left-radius: 3px; padding: 5px 10px; }
+.author-footer .octicon-heart {color: firebrick}

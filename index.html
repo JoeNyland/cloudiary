@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ClouDiary">
+    <meta name="author" content="Joe Nyland">
+    <link rel="shortcut icon" href="assets/img/favicon.ico">
+
+    <title>ClouDiary</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prettyPhoto/3.1.6/css/prettyPhoto.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/3.5.0/octicons.min.css">
+
+    <!-- ToDo: Tidy up CSS -->
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/cloudiary.css" rel="stylesheet">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/img/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/img/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/img/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/img/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/img/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/img/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/img/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/img/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="/assets/img/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/assets/img/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="/assets/img/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/assets/img/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/assets/img/manifest.json">
+    <link rel="mask-icon" href="/assets/img/safari-pinned-tab.svg" color="#384452">
+    <link rel="shortcut icon" href="/assets/img/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-TileImage" content="/assets/img/mstile-144x144.png">
+    <meta name="msapplication-config" content="/assets/img/browserconfig.xml">
+    <meta name="theme-color" content="#384452">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+</head>
+
+<body data-spy="scroll" data-target=".navbar" data-offset="170">
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#home"><i class="fa fa-book"></i> Clou<span class="blue">Diary</span></a>
+        </div>
+        <div class="navbar-collapse collapse navbar-right">
+            <ul class="nav navbar-nav">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#help">Help</a></li>
+                <li><a target="_blank" href="https://cloudiary.herokuapp.com/login" class="btn btn-primary">Log In</a></li>
+                <li><a target="_blank" href="https://cloudiary.herokuapp.com/signup" class="btn btn-success">Sign Up</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div id="home">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-6 col-xs-offset-3 col-sm-4 col-sm-offset-4">
+                <h1 class="logo-tablet-dark-big"><i class="fa fa-book fa-lg white" aria-hidden="true"></i> Clou<span class="blue">Diary</span></h1>
+                <h5>Your diary. In the cloud, where no one would think to look!</h5>
+            </div>
+            <div class="col-lg-8 col-lg-offset-2 img">
+                <img src="assets/img/screenshot-diary.png" class="img-responsive">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="about">
+    <h2>About <span class="logo-tablet-dark-inline white">Clou<span class="blue">Diary</span></span></h2>
+    <div class="container">
+        <div class="row centered">
+            <div class="col-md-4">
+                <i class="fa fa-user-secret" aria-hidden="true"></i>
+                <h4>Private and secure</h4>
+                <p>Only you should be able to read your diary. That should be the case if it's in the cloud, or tucked
+                    under your pillow.</p>
+                <p>For <span class="logo-tablet-dark-inline white">Clou<span class="blue">Diary</span></span>, your privacy is paramount. State of the art technology is
+                    used to ensure that your private data is kept private. Only you can see it and that will never
+                    change.</p>
+            </div>
+            <div class="col-md-4">
+                <i class="fa fa-money" aria-hidden="true"></i>
+                <h4>Free!</h4>
+                <p>Yes, that's right! FREE!</p>
+                <p>There's no cost to store you diary in the cloud with
+                    <span class="logo-tablet-dark-inline white">Clou<span class="blue">Diary</span></span>.</p>
+                <p>In the future, there will be cool features and extras that there may be a small charge for. For now,
+                    it will not cost you penny!</p>
+            </div>
+            <div class="col-md-4">
+                <i class="fa fa-heart" aria-hidden="true"></i>
+                <h4>Built with love</h4>
+                <p>No one likes using buggy apps and no one likes writing buggy code!</p>
+                <p>The whole app has been built from the ground up, using open source libraries and software. A
+                    significant amount of time has been taken to build the app "the right way" from the start so you
+                    should expect the app to be as fast, reliable and as secure as it possibly can be.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="portfoliowrap">
+
+    <h4>Screenshots</h4>
+
+        <div class="portfolio portfolio-centered">
+            <div class="portfolio-item">
+                <div class="he-wrap tpl6">
+                    <img src="assets/img/screenshot-diaries.png" alt="A list of your diaries">
+
+                    <div class="he-view">
+                        <div class="bg a0" data-animate="fadeIn">
+                            <h3 class="a1" data-animate="fadeInDown">A list of your diaries</h3>
+                            <a data-rel="prettyPhoto" href="assets/img/screenshot-diaries.png" class="dmbutton a2"
+                               data-animate="fadeInUp"><i class="fa fa-search fa-lg"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio-item">
+                <div class="he-wrap tpl6">
+                    <img src="assets/img/screenshot-diary.png" alt="View a diary">
+
+                    <div class="he-view">
+                        <div class="bg a0" data-animate="fadeIn">
+                            <h3 class="a1" data-animate="fadeInDown">View a diary</h3>
+                            <a data-rel="prettyPhoto" href="assets/img/screenshot-diary.png" class="dmbutton a2"
+                               data-animate="fadeInUp"><i class="fa fa-search fa-lg"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio-item">
+                <div class="he-wrap tpl6">
+                    <img src="assets/img/screenshot-create-entry.png" alt="Create a new diary entry">
+
+                    <div class="he-view">
+                        <div class="bg a0" data-animate="fadeIn">
+                            <h3 class="a1" data-animate="fadeInDown">Create a new diary entry</h3>
+                            <a data-rel="prettyPhoto" href="assets/img/screenshot-create-entry.png" class="dmbutton a2"
+                               data-animate="fadeInUp"><i class="fa fa-search fa-lg"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio-item">
+                <div class="he-wrap tpl6">
+                    <img src="assets/img/screenshot-edit-profile.png" alt="Edit your profile">
+
+                    <div class="he-view">
+                        <div class="bg a0" data-animate="fadeIn">
+                            <h3 class="a1" data-animate="fadeInDown">Edit your profile</h3>
+                            <a data-rel="prettyPhoto" href="assets/img/screenshot-edit-profile.png" class="dmbutton a2"
+                               data-animate="fadeInUp"><i class="fa fa-search fa-lg"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+</div>
+
+<div id="help" class="blue-container">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12"><h2>Help</h2></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4 col-sm-offset-2">
+                <i class="fa fa-bug fa-5x"></i>
+                <h4>Spotted an error?</h4>
+                <p>Every effort has been made to make sure that the app is free from errors, typos, etc. However,
+                    we are only human and as a result there will be issue that slip through the net. If you encounter
+                    such an issue, please file an issue
+                    <a href="https://github.com/MasterRoot24/cloudiary/issues/new" target="_blank">here</a>.
+            </div>
+            <div class="col-sm-4">
+                <i class="fa fa-question fa-5x"></i>
+                <h4>Got a question?</h4>
+                <p>If you have a question about
+                    <span class="logo-tablet-dark-inline white">Clou<span class="blue">Diary</span></span>,
+                    please feel free to get in touch!</p>
+                <p>Contact details can be found below.</p>
+            </div>
+        </div>
+    </div>
+    <p></p>
+</div>
+
+<div id="footerwrap">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-lg-offset-2">
+                <h4>Social</h4>
+                <div class="hline-w"></div>
+                <p>
+                    <a target="_blank" href="https://github.com/MasterRoot24/cloudiary"><i class="fa fa-github"></i></a>
+                    <a target="_blank" href="https://twitter.com/JoeNyland"><i class="fa fa-twitter"></i></a>
+                    <a target="_blank" href="mailto:contact@joenyland.me"><i class="fa fa-envelope"></i></a>
+                </p>
+            </div>
+            <div class="col-lg-4">
+                <h4>About</h4>
+                <div class="hline-w"></div>
+                <p><span class="logo-tablet-light-inline white">Clou<span class="blue">Diary</span></span> was built by
+                    <a href="http://joenyland.me/" target="_blank">Joe Nyland</a>.</p>
+                <p>Joe runs and maintains the app in his spare time, along with other projects that he's working on. To
+                    find out more, check out his site <a href="http://joenyland.me/" target="_blank">here</a>.</p>
+            </div>
+        </div>
+    </div>
+    <div class="author-footer">
+        <span class="octicon octicon-keyboard"></span> with <span class="octicon octicon-heart"></span> by <a href="http://joenyland.me" class="text-bold" target="_blank">Joe Nyland</a>
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<script src="assets/js/jquery.hoverex.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prettyPhoto/3.1.6/js/jquery.prettyPhoto.min.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>
