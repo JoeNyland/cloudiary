@@ -6,23 +6,26 @@
 }
 
 body {
-  height: 100%;
   background: $white;
   color: $dark-blue;
   font-family: $body-font;
-  font-weight: 400;
+  height: 100%;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: $header-font;
-  font-weight: 700;
 }
 
 p {
-  margin-bottom: 12px;
+  color: $dark-blue;
   font-size: 14px;
   line-height: 24px;
-  color: $dark-blue;
+  margin-bottom: 12px;
   margin-top: 10px;
 }
 
@@ -31,42 +34,17 @@ img {
   max-width: 100%;
 }
 
-a, .dmbutton {
-  text-decoration: none;
-  transition: background-color .4s linear, color .4s linear;
-}
-
-a:hover,
-a:focus {
-  text-decoration: none;
-  color: $blue;
-}
-
-.dmbutton:hover,
-.dmbutton:active,
-.dmbutton:focus {
-  color: $white;
-  background-color: $black;
-}
-
-.dmbutton {
-  background: transparent;
-  border: 1px solid $white;
-  color: $white;
-  border-radius: 2px;
-  letter-spacing: 0.85px;
-  padding: 1.025rem 2.25rem 1.0875rem;
-  font-size: 1.55rem;
-  font-weight: normal;
-  line-height: normal;
-  margin: 0 0 1.25rem;
-  text-align: center;
-  display: inline-block;
+a {
+  &:focus,
+  &:hover {
+    color: $blue;
+    text-decoration: none;
+  }
 }
 
 ::selection {
-  color: $white;
   background: $black;
+  color: $white;
 }
 
 .hline {
@@ -77,4 +55,15 @@ a:focus {
 .hline-w {
   border-bottom: 2px solid $white;
   margin-bottom: 25px;
+}
+
+.blue-container {
+  background-color: $blue;
+  color: $white;
+  padding: 100px 0;
+
+  p {
+    color: $white;
+  }
+
 }

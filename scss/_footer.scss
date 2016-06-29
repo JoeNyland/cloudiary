@@ -1,4 +1,5 @@
 @import 'config';
+@import 'mixins';
 
 #footerwrap {
 
@@ -16,10 +17,11 @@
 
   i {
 
+    @include transitions;
+
     color: $white;
     font-size: 30px;
     padding-right: 25px;
-    transition: background-color .4s linear, color .4s linear;
 
     &:hover {
       color: $blue;

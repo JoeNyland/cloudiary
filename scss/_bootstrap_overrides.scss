@@ -1,32 +1,78 @@
-@import "config";
+@import 'config';
+@import 'mixins';
 
 .navbar {
+  margin-bottom: 0;
   min-height: 70px;
   padding-top: 10px;
-  margin-bottom: 0;
-}
-.navbar-header .navbar-brand {
-  color: $white;
+
+  .btn { margin: 5px 10px; }
+
+  a {
+    &:hover {
+
+      .blue {
+        @include transitions;
+        color: $dark-grey;
+      }
+
+      .cloudiary-logo-tablet,
+      i {
+        @include transitions;
+        color: $dark-grey;
+      }
+
+      @include transitions;
+    }
+  }
 }
 
-.navbar-default .navbar-nav > li > a {
-  color: $white;
-  font-weight: 700;
-  font-size: 12px;
+.navbar-header {
+
+  .navbar-brand {
+    color: $white;
+  }
+
 }
 
-.navbar-default .navbar-nav > li > a:hover {
-  color: $blue;
-}
-
-.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
-  color: $blue;
-  background-color: transparent;
-}
 
 .navbar-default {
+
   background-color: $dark-blue;
-  border-color: transparent;
+  border: 0;
+
+  .navbar-nav {
+    li {
+      a {
+        color: $white;
+        font-size: 12px;
+
+        &:hover {
+          color: $blue;
+        }
+
+      }
+    }
+
+    .active {
+      a {
+        &:hover,
+        &:focus {
+          background-color: transparent;
+          color: $blue;
+        }
+        background-color: transparent;
+        color: $blue;
+      }
+    }
+
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .navbar {
+    .btn { margin: 0 5px; }
+  }
 }
 
 .dropdown-menu {
@@ -35,6 +81,6 @@
 
 .dropdown-menu > li > a {
   color: $white;
-  font-weight: 700;
   font-size: 12px;
+  font-weight: 700;
 }

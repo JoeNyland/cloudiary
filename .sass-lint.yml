@@ -1,0 +1,3 @@
+rules:
+  nesting-depth:
+    - max-depth: 4

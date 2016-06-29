@@ -1,4 +1,12 @@
 @import 'config';
+@import 'mixins';
+
+.portfolio {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 
 .portfoliowrap {
 
@@ -15,11 +23,26 @@
 
 .portfolio-item {
 
+  margin: 5px;
+  max-width: 300px;
+  padding: 25px;
+
   .title {
     &::before {
       border-radius: 0;
       display: none;
     }
+  }
+
+  &:nth-of-type(2n) {
+    background-color: $blue;
+  }
+
+  &:nth-of-type(2n-1) {
+    .bg {
+      background-color: $dark-blue;
+    }
+    background-color: $dark-blue;
   }
 
   p {
@@ -53,6 +76,33 @@
     height: 100%;
     text-align: center;
     width: 100%;
+  }
+
+}
+
+.dmbutton {
+
+  @include transitions;
+
+  background: transparent;
+  border: 1px solid $white;
+  border-radius: 2px;
+  color: $white;
+  display: inline-block;
+  font-size: 1.55rem;
+  font-weight: normal;
+  letter-spacing: .85px;
+  line-height: normal;
+  margin: 0 0 1.25rem;
+  padding: 1.025rem 2.25rem 1.0875rem;
+  text-align: center;
+  text-decoration: none;
+
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: $black;
+    color: $white;
   }
 
 }

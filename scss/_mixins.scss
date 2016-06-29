@@ -1,0 +1,3 @@
+@mixin transitions {
+  transition: background-color .4s linear, color .4s linear, border .4s linear;
+}
