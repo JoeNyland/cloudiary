@@ -20,7 +20,7 @@ gulp.task('watch', function() {
   gulp.watch('scss/**/*.scss', ['build-css']);
 });
 
-// Concatenate all SCSS files in scss, generate sourcemaps, minify it and output to assets/css/nudge.min.css
+// Concatenate all SCSS files in scss, generate sourcemaps, minify it and output to assets/css/cloudiary.min.css
 gulp.task('build-css', function() {
   return gulp.src(['scss/**/*.scss','scss/**/*.css'])
     .pipe(sassLint({configFile: '.sass_lint.yml'}))
@@ -37,7 +37,7 @@ gulp.task('build-css', function() {
     .pipe(gulp.dest('assets/css'));
 });
 
-// Concatenate all Javascript files in js, generate sourcemaps, minify it and output to assets/js/nudge.min.js
+// Concatenate all Javascript files in js, generate sourcemaps, minify it and output to assets/js/cloudiary.min.js
 gulp.task('build-js', function() {
   return gulp.src('js/**/*.js')
     .pipe(jshint())
