@@ -1,4 +1,5 @@
-// Helpers
-.centered {
-  text-align: center
-}
+@import 'config';
+
+.centered { text-align: center; }
+.blue { color: $blue; }
+.white { color: $white; }
