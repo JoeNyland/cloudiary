@@ -30,9 +30,11 @@
     font-size: 16px;
     margin: -10px 0 10px;
   }
+
 }
 
 .tpl6 {
+
   h3 {
     color: $white;
     font-size: 16px;
@@ -45,4 +47,11 @@
     font-size: 13px;
     margin: 30px 5px 20px;
   }
+  .bg {
+    height: 100%;
+    width: 100%;
+    background-color: $opaque-blue;
+    text-align: center;
+  }
+
 }
