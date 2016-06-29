@@ -1,0 +1,43 @@
+.portfoliowrap {
+  padding-top: 60px;
+  margin-bottom: 60px;
+  display: block;
+  text-align: center
+}
+
+.portfoliowrap h3 {
+  margin-bottom: 25px;
+}
+
+.portfolio {
+  padding: 0 !important;
+  margin: 0 !important;
+  display: block;
+}
+
+.portfolio-item .title:before { border-radius: 0; display: none }
+
+.portfolio-item p { margin: 0px 0 30px; }
+
+.portfolio-item h3 { margin: -10px 0 10px; font-size: 16px; }
+
+.tpl6 h3 {
+  color: #ffffff;
+  margin: 0;
+  padding: 40px 5px 0;
+  font-size: 16px;
+}
+
+.tpl6 .dmbutton {
+  display: inline-block;
+  margin: 30px 5px 20px 5px;
+  font-size: 13px;
+}
+
+.tpl6 .bg {
+  height: 100%;
+  width: 100%;
+  background-color: #00b3fe;
+  background-color: rgba(0, 179, 254, .9);
+  text-align: center;
+}

@@ -1,0 +1,88 @@
+@import 'config';
+
+.blue { color: $blue; }
+
+.white { color: $white; }
+
+.logo-tablet-dark-big {
+  border-radius: 3px;
+  background-color: $dark-blue;
+  padding: 20px 10px;
+}
+
+.logo-tablet-dark-inline {
+  border-radius: 3px;
+  background-color: $dark-blue;
+  padding: 0 3px;
+  display: inline;
+}
+
+.logo-tablet-light-inline {
+  border-radius: 3px;
+  background-color: $white;
+  color: $dark-blue;
+  padding: 0 3px;
+  display: inline;
+}
+
+a:hover .blue {
+  color: $dark-grey;
+}
+
+a .blue {
+  transition: background-color .4s linear, color .4s linear;
+}
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.navbar .btn { margin: 5px 10px; }
+
+@media screen and (min-width: 768px) {
+  .navbar .btn { margin: 0 5px; }
+}
+
+.portfolio-item {
+  padding: 25px;
+  margin: auto;
+}
+
+.portfolio-item:nth-of-type(2n) {
+  background-color: $blue;
+}
+
+.portfolio-item:nth-of-type(2n-1),
+.portfolio-item:nth-of-type(2n-1) .bg {
+  background-color: $dark-blue;
+}
+
+.portfolio {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.portfolio-item {
+  max-width: 300px;
+  margin: 5px;
+}
+
+#help {
+  text-align: center;
+}
+
+.blue-container {
+  color: $white;
+  background-color: $blue;
+  padding: 100px 0;
+}
+
+.blue-container p {
+  color: $white;
+}
+
+.author-footer { position: fixed; right: 0; bottom: 0; background-color: $white; border-top-left-radius: 3px; padding: 5px 10px; }
+
+.author-footer .octicon-heart { color: firebrick }

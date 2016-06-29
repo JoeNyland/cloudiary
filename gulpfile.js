@@ -45,14 +45,14 @@ gulp.task('build-js', ['jshint'], function() {
 });
 
 gulp.task('sass-lint', function() {
-  return gulp.src(['scss/**/*.?(s)css','!scss/hoverex-all.css'])
+  return gulp.src(['scss/**/*.?(s)css','!scss/plugins/*'])
     .pipe(sassLint({configFile: '.sass_lint.yml'}))
     .pipe(sassLint.format())
     .pipe(sassLint.failOnError());
 });
 
 gulp.task('jshint', function() {
-  return gulp.src(['js/**/*.js', '!**/jquery.hoverex.min.js'])
+  return gulp.src(['js/**/*.js', '!js/plugins/*'])
     .pipe(jshint())
     .pipe(jshint.reporter('jshint-stylish'));
 });

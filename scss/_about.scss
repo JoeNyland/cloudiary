@@ -1,0 +1,17 @@
+@import 'config';
+
+#about {
+  margin-top: 100px;
+  margin-bottom: 80px;
+  text-align: center
+}
+
+#about h3 {
+  margin-bottom: 50px;
+}
+
+#about i {
+  color: $blue;
+  font-size: 60px;
+  padding: 15px;
+}

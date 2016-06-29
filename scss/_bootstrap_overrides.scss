@@ -1,0 +1,40 @@
+@import "config";
+
+.navbar {
+  min-height: 70px;
+  padding-top: 10px;
+  margin-bottom: 0;
+}
+.navbar-header .navbar-brand {
+  color: $white;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: $white;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+  color: $blue;
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  color: $blue;
+  background-color: transparent;
+}
+
+.navbar-default {
+  background-color: $dark-blue;
+  border-color: transparent;
+}
+
+.dropdown-menu {
+  background: $dark-blue;
+}
+
+.dropdown-menu > li > a {
+  color: $white;
+  font-weight: 700;
+  font-size: 12px;
+}
