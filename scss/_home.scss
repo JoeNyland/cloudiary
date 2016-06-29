@@ -1,21 +1,25 @@
+@import 'config';
+
 #home {
-  background-color: #00b3fe;
+  background-color: $blue;
   min-height: 550px;
-  padding-top: 100px;
   padding-bottom: 0;
+  padding-top: 100px;
   text-align: center;
-}
 
-#home h3, h5 {
-  color: white;
-  font-weight: 400;
-}
+  h3,
+  h5 {
+    color: $white;
+    font-weight: 400;
+  }
 
-#home h1 {
-  color: white;
-  margin-bottom: 25px;
-}
+  h1 {
+    color: $white;
+    margin-bottom: 25px;
+  }
 
-#home .img-responsive {
-  margin: 0 auto;
+  .img-responsive {
+    margin: 0 auto;
+  }
+
 }
