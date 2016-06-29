@@ -22,7 +22,7 @@ gulp.task('watch', function() {
 
 // Concatenate all SCSS files in scss, generate sourcemaps, minify it and output to assets/css/cloudiary.min.css
 gulp.task('build-css', function() {
-  return gulp.src(['scss/**/*.scss','scss/**/*.css'])
+  return gulp.src('scss/**/[^_]*.?(s)css')
     .pipe(sassLint({configFile: '.sass_lint.yml'}))
     .pipe(sassLint.format())
     .pipe(sassLint.failOnError())
