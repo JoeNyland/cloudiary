@@ -1,30 +1,5 @@
 @import 'config';
 
-.blue { color: $blue; }
-
-.white { color: $white; }
-
-.logo-tablet-dark-big {
-  border-radius: 3px;
-  background-color: $dark-blue;
-  padding: 20px 10px;
-}
-
-.logo-tablet-dark-inline {
-  border-radius: 3px;
-  background-color: $dark-blue;
-  padding: 0 3px;
-  display: inline;
-}
-
-.logo-tablet-light-inline {
-  border-radius: 3px;
-  background-color: $white;
-  color: $dark-blue;
-  padding: 0 3px;
-  display: inline;
-}
-
 a:hover .blue {
   color: $dark-grey;
 }

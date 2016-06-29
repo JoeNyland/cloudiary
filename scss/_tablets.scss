@@ -1,0 +1,32 @@
+@import 'config';
+
+.cloudiary-logo-tablet {
+
+  border-radius: 3px;
+  font-family: $header-font;
+  padding: 0 3px;
+
+  .blue {
+    color: $blue;
+  }
+
+  &.big {
+    padding: 20px 10px;
+  }
+
+  &.inline {
+    display: inline;
+    padding: 0 3px;
+  }
+
+  &.light {
+    background-color: $white;
+    color: $dark-blue;
+  }
+
+  &.dark {
+    background-color: $dark-blue;
+    color: $white;
+  }
+
+}
