@@ -21,11 +21,8 @@ gulp.task('watch', function() {
 });
 
 // Concatenate all SCSS files in scss, generate sourcemaps, minify it and output to assets/css/cloudiary.min.css
-gulp.task('build-css', function() {
+gulp.task('build-css', ['sass-lint'], function() {
   return gulp.src('scss/**/[^_]*.?(s)css')
-    .pipe(sassLint({configFile: '.sass_lint.yml'}))
-    .pipe(sassLint.format())
-    .pipe(sassLint.failOnError())
     .pipe(sourcemaps.init())
     .pipe(concat('cloudiary.min.css'))
     // Only compress for production
@@ -38,13 +35,24 @@ gulp.task('build-css', function() {
 });
 
 // Concatenate all Javascript files in js, generate sourcemaps, minify it and output to assets/js/cloudiary.min.js
-gulp.task('build-js', function() {
+gulp.task('build-js', ['jshint'], function() {
   return gulp.src('js/**/*.js')
-    .pipe(jshint())
-    .pipe(jshint.reporter('jshint-stylish'))
     .pipe(sourcemaps.init())
     .pipe(concat('cloudiary.min.js'))
     .pipe(gutil.env.type === 'production' ? uglify() : gutil.noop()) // Only uglify if gulp is ran with '--type production'
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('assets/js'));
+});
+
+gulp.task('sass-lint', function() {
+  return gulp.src(['scss/**/*.?(s)css','!scss/hoverex-all.css'])
+    .pipe(sassLint({configFile: '.sass_lint.yml'}))
+    .pipe(sassLint.format())
+    .pipe(sassLint.failOnError());
+});
+
+gulp.task('jshint', function() {
+  return gulp.src(['js/**/*.js', '!**/jquery.hoverex.min.js'])
+    .pipe(jshint())
+    .pipe(jshint.reporter('jshint-stylish'));
 });
