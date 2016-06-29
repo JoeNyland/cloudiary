@@ -1,23 +1,30 @@
+@import 'config';
+
 #footerwrap {
-  padding-top: 60px;
+
+  background: $dark-blue;
   padding-bottom: 60px;
-  background: #384452;
-}
+  padding-top: 60px;
 
-#footerwrap p {
-  color: #bfc9d3;
-}
+  p {
+    color: $white;
+  }
 
-#footerwrap h4 {
-  color: white;
-}
+  h4 {
+    color: $white;
+  }
 
-#footerwrap i {
-  font-size: 30px;
-  color: #bfc9d3;
-  padding-right: 25px;
-}
+  i {
 
-#footerwrap i:hover {
-  color: #00b3fe
+    color: $white;
+    font-size: 30px;
+    padding-right: 25px;
+    transition: background-color .4s linear, color .4s linear;
+
+    &:hover {
+      color: $blue;
+    }
+
+  }
+
 }
