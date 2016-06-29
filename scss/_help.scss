@@ -1,5 +1,14 @@
 @import 'config';
 
 #help {
+
+  background-color: $blue;
+  color: $white;
+  padding: 100px 0;
   text-align: center;
+
+  p {
+    color: $white;
+  }
+
 }
