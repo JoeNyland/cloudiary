@@ -28,3 +28,13 @@
   }
 
 }
+
+.author-footer {
+  background-color: $white;
+  border-top-left-radius: 3px;
+  bottom: 0;
+  padding: 5px 10px;
+  position: fixed;
+  right: 0;
+  .octicon-heart { color: $red; }
+}
