@@ -55,7 +55,7 @@ group :development do
   gem 'reek'
 end
 
-gem 'codeclimate-test-reporter', group: :test, require: nil
+gem 'codeclimate-test-reporter', '~> 0', group: :test, require: nil
 
 group :production do
   gem 'pg'
