@@ -6,4 +6,7 @@ ignore:
     - '* > coffee-rails@4.1.1':
         reason: None given
         expires: '2017-03-03T15:48:38.894Z'
+    - '* > jquery-rails@4.2.1':
+        reason: None given
+        expires: '2017-03-18T12:29:33.936Z'
 patch: {}
