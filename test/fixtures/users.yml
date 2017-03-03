@@ -1,7 +1,7 @@
 joe:
   id: 1
   name: Joe Nyland
-  email: contact@joenyland.me
+  email: joe@example.com
   password_digest: <%= User.digest('password') %>
 
 <% 29.times do |n| %>
