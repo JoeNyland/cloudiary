@@ -52,7 +52,6 @@ group :development do
   gem 'spring'
 
   gem 'rubocop'
-  gem 'reek'
 end
 
 group :production do
