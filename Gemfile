@@ -55,8 +55,6 @@ group :development do
   gem 'reek'
 end
 
-gem 'codeclimate-test-reporter', '~> 0', group: :test, require: nil
-
 group :production do
   gem 'pg'
   gem 'rails_12factor'

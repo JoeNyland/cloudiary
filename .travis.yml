@@ -1,5 +1,2 @@
 language: ruby
 cache: bundler
-addons:
-  code_climate:
-    repo_token: ed17deeb273bde0f2bc26839107c835a59013024e4d5afedf990335140ecb106
