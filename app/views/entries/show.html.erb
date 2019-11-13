@@ -15,7 +15,7 @@
 </div>
 
 <div class="btn-group">
-  <%= link_to 'Back to your diary', user_diary_path(@user,@diary), class: 'btn btn-default' %>
-  <%= link_to 'Delete this entry', user_diary_entry_path, method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-danger' %>
-  <%= link_to 'Edit this entry', edit_user_diary_entry_path, class: 'btn btn-default' %>
+  <%= link_to 'Back to your entries', user_entries_path(@user), class: 'btn btn-default' %>
+  <%= link_to 'Delete this entry', user_entry_path, method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-danger' %>
+  <%= link_to 'Edit this entry', edit_user_entry_path, class: 'btn btn-default' %>
 </div>

@@ -11,25 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160529175317) do
-
-  create_table "diaries", force: :cascade do |t|
-    t.string   "title"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer  "user_id"
-  end
-
-  add_index "diaries", ["user_id"], name: "index_diaries_on_user_id"
+ActiveRecord::Schema.define(version: 20191113212503) do
 
   create_table "entries", force: :cascade do |t|
-    t.integer  "diary_id"
     t.text     "body"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "user_id"
+    t.integer  "diary_id_id"
   end
 
-  add_index "entries", ["diary_id"], name: "index_entries_on_diary_id"
+  add_index "entries", ["user_id"], name: "index_entries_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "name"

@@ -5,14 +5,14 @@
 </div>
 
 <div class="row">
-  <%= form_for [@user,@diary,@entry], html: { class: 'col-md-6' } do |f| %>
+  <%= form_for [@user,@entry], html: { class: 'col-md-6' } do |f| %>
     <%= render 'shared/error_messages', object: f.object %>
     <div class="form-group">
       <%= f.label :body %>
       <%= f.text_area :body, class: 'form-control', rows: 10 %>
     </div>
     <div class="btn-group">
-      <%= link_to 'Cancel', user_diary_path(@current_user,@diary), class: 'btn btn-default' %>
+      <%= link_to 'Cancel', user_entry_path, class: 'btn btn-default' %>
       <%= f.submit 'Save changes', class: 'btn btn-primary' %>
     </div>
   <% end %>

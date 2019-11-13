@@ -12,8 +12,8 @@
   <li>Email: <%= @user.email %></li>
 </ul>
 
-  <%= link_to 'Edit your profile', edit_user_path([@user]), class: 'btn btn-default' %>
-  <%= link_to 'View your diaries', user_diaries_path([@user]), class: 'btn btn-default' %>
+  <%= link_to 'Edit your profile', edit_user_path, class: 'btn btn-default' %>
+  <%= link_to 'View your diary entries', user_entries_path(@user), class: 'btn btn-default' %>
 
 </div>
 </div>
