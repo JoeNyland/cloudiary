@@ -3,8 +3,7 @@ require 'test_helper'
 class EntryTest < ActiveSupport::TestCase
 
   def setup
-    @diary = diaries(:one)
-    @entry = @diary.entries.new
+    @entry = Entry.new
   end
 
   test 'should not be valid if empty' do
