@@ -11,7 +11,7 @@ class EntriesEditTest < ActionDispatch::IntegrationTest
     log_in_as(@user)
     get edit_user_entry_path(@user,@entry)
     assert_template 'entries/edit'
-    patch_via_redirect user_entry_path(@user,@entry), entry: { body: nil }
+    patch user_entry_path(@user,@entry), params: { entry: { body: nil } }
     assert_not flash.empty?
     assert_select '.alert-error'
     assert_template 'entries/edit'
@@ -21,7 +21,8 @@ class EntriesEditTest < ActionDispatch::IntegrationTest
     log_in_as(@user)
     get edit_user_entry_path(@user,@entry)
     assert_template 'entries/edit'
-    patch_via_redirect user_entry_path(@user,@entry), entry: { body: :foo }
+    patch user_entry_path(@user,@entry), params: { entry: { body: :foo } }
+    follow_redirect!
     assert_not flash.empty?
     assert_select '.alert-success'
     assert_template 'entries/show'

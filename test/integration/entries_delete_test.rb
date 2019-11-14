@@ -10,7 +10,8 @@ class EntriesDeleteTest < ActionDispatch::IntegrationTest
   test 'successful entry deletion' do
     log_in_as(@user)
     assert_difference 'Entry.count',-1 do
-      delete_via_redirect user_entry_path(@user,@entry)
+      delete user_entry_path(@user,@entry)
+      follow_redirect!
     end
     assert_template 'entries/index'
     assert_not flash.empty?

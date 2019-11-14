@@ -10,7 +10,7 @@ class EntriesCreateTest < ActionDispatch::IntegrationTest
     log_in_as(@user)
     get new_user_entry_path(@user)
     assert_no_difference 'Entry.count' do
-      post user_entries_path(@user), entry: {foo: :bar}
+      post user_entries_path(@user), params: { entry: {foo: :bar} }
     end
     assert_template 'entries/new'
   end
@@ -19,7 +19,7 @@ class EntriesCreateTest < ActionDispatch::IntegrationTest
     log_in_as(@user)
     get new_user_entry_path(@user,@diary)
     assert_no_difference 'Entry.count' do
-      post user_entries_path(@user,@diary), entry: {foo: :bar}
+      post user_entries_path(@user,@diary), params: { entry: {foo: :bar} }
     end
     assert_template 'entries/new'
     assert_not flash.empty?
@@ -30,7 +30,8 @@ class EntriesCreateTest < ActionDispatch::IntegrationTest
     log_in_as(@user)
     get new_user_entry_path(@user,@diary)
     assert_difference 'Entry.count', 1 do
-      post_via_redirect user_entries_path(@user,@diary), entry: {body: :bar}
+      post user_entries_path(@user,@diary), params: { entry: {body: :bar} }
+      follow_redirect!
     end
     assert_template 'entries/show'
     assert_not flash.empty?
