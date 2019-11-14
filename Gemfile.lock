@@ -193,7 +193,7 @@ DEPENDENCIES
   jquery-rails
   pg
   puma
-  rails (~> 5.1)
+  rails (~> 5.2)
   rails-controller-testing
   rails_12factor
   sass-rails (~> 5.0)
