@@ -11,14 +11,14 @@ class EntryTest < ActiveSupport::TestCase
   end
 
   test 'should be valid' do
-    @entry.body = Faker::Lorem.sentences(5)
+    @entry.body = Faker::Lorem.sentences(number: 5)
     assert @entry.valid?
   end
 
   test 'body must be present' do
     @entry.body = '   '
     assert_not @entry.valid?
-    @entry.body = Faker::Lorem.sentences(5)
+    @entry.body = Faker::Lorem.sentences(number: 5)
     assert @entry.valid?
   end
 
