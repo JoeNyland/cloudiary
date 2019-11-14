@@ -5,7 +5,7 @@ class EntriesController < ApplicationController
 
   def index
     @user = User.find(params[:user_id])
-    @entries = @user.entries
+    @entries = @user.entries.order :created_at
   end
 
   def new
