@@ -19,8 +19,10 @@
       <p>You haven't created any diary entries yet. Why not make a start?</p>
     <% end %>
 
-    <div class="btn-group">
-      <%= link_to 'Create a new entry', new_user_entry_path(@user), class: 'btn btn-primary' %>
-    </div>
+    <% if @entries.empty? || @entries.last.created_at.to_date != Date.today %>
+      <div class="btn-group">
+        <%= link_to 'Create a new entry', new_user_entry_path(@user), class: 'btn btn-primary' %>
+      </div>
+    <% end %>
   </div>
 </div>
