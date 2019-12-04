@@ -1,4 +1,4 @@
-class AddUserRefToDiaries < ActiveRecord::Migration
+class AddUserRefToDiaries < ActiveRecord::Migration[4.2]
   def change
     add_reference :diaries, :user, index: true, foreign_key: true
   end

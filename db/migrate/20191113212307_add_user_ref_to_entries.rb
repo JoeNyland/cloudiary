@@ -1,4 +1,4 @@
-class AddUserRefToEntries < ActiveRecord::Migration
+class AddUserRefToEntries < ActiveRecord::Migration[4.2]
   def change
     add_reference :entries, :user, index: true, foreign_key: true
   end
