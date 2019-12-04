@@ -18,7 +18,6 @@ ActiveRecord::Schema.define(version: 20191113212503) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.integer  "user_id"
-    t.integer  "diary_id_id"
   end
 
   add_index "entries", ["user_id"], name: "index_entries_on_user_id"
